@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Di Yen Anjala papa ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #ffeef5);
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: white;
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #ff4f81;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #444;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        button {
+            border: none;
+            padding: 13px 28px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .yes {
+            background: #ff4f81;
+            color: white;
+        }
+
+        .yes:hover {
+            transform: scale(1.08);
+        }
+
+        .no {
+            background: #ddd;
+            color: #333;
+            position: relative;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .heart {
+            font-size: 45px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .birthday {
+            font-size: 36px;
+            color: #ff4f81;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- QUESTION 1 -->
+        <div id="question1">
+
+            <div class="heart">❤️</div>
+
+            <h1>One Little Question...</h1>
+
+            <h2>Will you stay with me forever? 🥺❤️</h2>
+
+            <button class="yes" onclick="showQuestion2()">
+                YES ❤️
+            </button>
+
+            <button class="no" id="no1">
+                NO 😏
+            </button>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+        <div id="question2" class="hidden">
+
+            <div class="heart">💕</div>
+
+            <h1>One More Question...</h1>
+
+            <h2>Do you love me? 🥰</h2>
+
+            <button class="yes" onclick="showBirthday()">
+                YES 💖
+            </button>
+
+            <button class="no" id="no2">
+                NO 😏
+            </button>
+
+        </div>
+
+
+        <!-- BIRTHDAY MESSAGE -->
+        <div id="birthday" class="hidden">
+
+            <div class="heart">🎂❤️</div>
+
+            <h1 class="birthday">
+                Happy Birthday Di Yen Rishitha Pondati 🎉
+            </h1>
+
+            <h2>Yen Pasakari ❤️</h2>
+
+            <p>
+                Wishing you the happiest birthday! 🎂💗
+            </p>
+
+            <p>
+                Nee yennaku romba special di yen life la,
+                yen rishitha epaiyume santhoshama irukanum atha naa pathupan,
+                unmela than di ella pasamu vachu irrukan, unkuda epaiyume naa irrupan di unnakaga naa irrupan di pondati 🥰
+            </p>
+
+            <p>
+                ❤️ I love you so much di pondati ❤️
+            </p>
+
+            <p>
+                Yen kolantha di nee yen ulagame nee than di 🎀✨
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Show Question 2
+        function showQuestion2() {
+            document.getElementById("question1").classList.add("hidden");
+            document.getElementById("question2").classList.remove("hidden");
+        }
+
+
+        // Show Birthday Message
+        function showBirthday() {
+            document.getElementById("question2").classList.add("hidden");
+            document.getElementById("birthday").classList.remove("hidden");
+        }
+
+
+        // Make NO button jump
+        function makeNoButtonMove(button) {
+
+            button.style.position = "fixed";
+
+            const maxX = window.innerWidth - button.offsetWidth - 10;
+            const maxY = window.innerHeight - button.offsetHeight - 10;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        }
+
+
+        // Question 1 NO button
+        const no1 = document.getElementById("no1");
+
+        no1.addEventListener("mouseenter", function() {
+            makeNoButtonMove(no1);
+        });
+
+        no1.addEventListener("touchstart", function(e) {
+            e.preventDefault();
+            makeNoButtonMove(no1);
+        });
+
+
+        // Question 2 NO button
+        const no2 = document.getElementById("no2");
+
+        no2.addEventListener("mouseenter", function() {
+            makeNoButtonMove(no2);
+        });
+
+        no2.addEventListener("touchstart", function(e) {
+            e.preventDefault();
+            makeNoButtonMove(no2);
+        });
+
+    </script>
+
+</body>
+</html>
